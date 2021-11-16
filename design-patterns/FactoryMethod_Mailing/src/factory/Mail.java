@@ -1,4 +1,11 @@
 package factory;
 
-public class Mail {
+public abstract class Mail {
+
+    void sendMail() {
+        MailerTransport theTransport = createTransport();
+        theTransport.mail();
+    }
+
+    abstract MailerTransport createTransport();
 }
